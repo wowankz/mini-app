@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-import { Panel, PanelHeader, PanelHeaderBack, Avatar, Div, Card, CardGrid, Title, Headline, Group } from '@vkontakte/vkui';
-
+import { Panel, PanelHeader, PanelHeaderBack, Avatar, Div, Card, CardGrid, Title, Text, Headline, Group, CellButton } from '@vkontakte/vkui';
+import { Icon12Chevron } from '@vkontakte/icons';
 
 import './catalog.css';
 import mainNewsImg from '../../img/news.png'
@@ -25,9 +25,34 @@ const Catalog = props => (
 			</Div>
 		</Group>
 
-		<CardGrid size="l">
-			<Card size="l" mode="shadow" style={{ paddingLeft: 30, paddingRight: 25, paddingTop: 25, paddingBottom: 16, marginTop: 56 }}>
-				<Title level="3" style={{ textAlign: 'center' }} >Розыгрышь дня!</Title>
+		<CardGrid size="l" >
+			<Card className="lottery" size="l" mode="shadow" style={{ paddingLeft: 25, paddingRight: 10, paddingTop: 25, paddingBottom: 16, marginTop: 56 }}>
+				<Headline weight="semibold" style={{ textAlign: 'center', marginBottom: 30 }} >Розыгрышь дня!</Headline>
+				<Group onClick={() => { console.log('Open News'); }} role="link">
+					<Div className="lottery-item">
+						<img width="150" height="69" style={{ borderRadius: 3 }} src={mainNewsImg} alt="lottery-images" />
+						<Div style={{ paddingRight: 0, paddingTop: 0 }}>
+							<Headline weight="semibold" style={{ fontSize: 14 }}>Пройди тест и получи</Headline>
+							<Text style={{ fontSize: 14 }} weight="regular">Ак 47 Вулкан</Text>
+							<Div style={{ fontSize: 14, display: 'flex', alignItems: 'center', padding: 0, marginTop: 10 }}>
+								Подробнее
+								<Icon12Chevron />
+							</Div>
+						</Div>
+					</Div>
+
+					<Div className="lottery-item">
+						<img width="150" height="69" style={{ borderRadius: 3 }} src={mainNewsImg} alt="lottery-images" />
+						<Div style={{ paddingRight: 0, paddingTop: 0 }}>
+							<Headline weight="semibold" style={{ fontSize: 14 }}>Пройди тест и получи</Headline>
+							<Text style={{ fontSize: 14 }} weight="regular">Ак 47 Вулкан</Text>
+							<Div style={{ fontSize: 14, display: 'flex', alignItems: 'center', padding: 0, marginTop: 10 }}>
+								Подробнее
+								<Icon12Chevron />
+							</Div>
+						</Div>
+					</Div>
+				</Group>
 			</Card>
 		</CardGrid>
 	</Panel >
