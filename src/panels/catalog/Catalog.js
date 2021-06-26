@@ -9,12 +9,14 @@ import mainNewsImg from '../../img/news.png'
 const Catalog = props => (
 	<Panel id={props.id} className="catalog">
 		<PanelHeader
-			className="header"
+
 			separator={false}
 			left={<PanelHeaderBack className="back" onClick={props.goBack} data-to="home" />}
 		>
+			<Div className="header">
+				<Avatar width="48" className="header-avatar" src={props.fetchedUser.photo_200} />
+			</Div>
 
-			<Avatar width="48" className="header-avatar" src={props.fetchedUser.photo_200} />
 
 		</PanelHeader>
 		<Headline weight="semibold" className="title">Новости недели</Headline>
