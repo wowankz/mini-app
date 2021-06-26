@@ -9,7 +9,7 @@ import './Persik.css';
 const Persik = props => (
 	<Panel id={props.id}>
 		<PanelHeader
-			left={<PanelHeaderBack onClick={props.go} data-to="home"/>}
+			left={<PanelHeaderBack className="back" onClick={props.goBack} data-to="home" />}
 		>
 			Persik
 		</PanelHeader>
@@ -19,7 +19,7 @@ const Persik = props => (
 
 Persik.propTypes = {
 	id: PropTypes.string.isRequired,
-	go: PropTypes.func.isRequired,
+	goBack: PropTypes.func.isRequired,
 };
 
 export default Persik;

@@ -1,28 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
+import home from '../img/home.png';
+import { Panel, PanelHeader, PanelHeaderBack, Placeholder, Button, Group, Card, Div, CardGrid } from '@vkontakte/vkui';
 
-const Home = ({ id, go, fetchedUser }) => (
+const Home = ({ id, go }) => (
 	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
-		<Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>
-			<Cell
-				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-			</Cell>
-		</Group>}
+		<PanelHeader separator={false} left={<PanelHeaderBack onClick={() => { }} />}></PanelHeader>
 
-		<Group header={<Header mode="secondary">Navigation Example</Header>}>
-			<Div>
-				<Button stretched size="l" mode="secondary" onClick={go} data-to="persik">
-					Show me the Persik, please
-				</Button>
-			</Div>
+		<img className="home-img" src={home} alt="home-img" />
+
+		<Group>
+			<Placeholder
+				header="Играй и зарабатывай"
+				action={<Button size="m" style={{ backgroundColor: ' #BD00FF', paddingBottom: 16, paddingTop: 16, paddingRight: 101, paddingLeft: 101 }}>Начать</Button>}
+			>
+				Приложение поможет игрокам
+				общаться, зарабатывать и повышать
+				свои навыки в играх
+			</Placeholder>
 		</Group>
+
 	</Panel>
 );
 
