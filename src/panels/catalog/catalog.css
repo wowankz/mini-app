@@ -1,4 +1,14 @@
 .header{
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-avatar{
+    margin-top: 10px;
+}
+
+.catalog{
+    height: 60px;
 }
