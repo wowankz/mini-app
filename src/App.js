@@ -4,12 +4,11 @@ import { View, ScreenSpinner, AdaptivityProvider, AppRoot } from '@vkontakte/vku
 import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
-import Persik from './panels/Persik';
+import Catalog from './panels/catalog/Catalog';
 const history = []
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
-	const [historyState, setHistoryState] = useState([]);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
 	useEffect(() => {
@@ -31,7 +30,6 @@ const App = () => {
 	const go = e => {
 		console.log(history);
 		history.push(activePanel)
-		console.log('afte :', history);
 		setActivePanel(e.currentTarget.dataset.to);
 
 	};
@@ -46,7 +44,7 @@ const App = () => {
 			<AppRoot>
 				<View activePanel={activePanel} popout={popout}>
 					<Home id='home' fetchedUser={fetchedUser} go={go} />
-					<Persik id='persik' goBack={goBack} />
+					<Catalog id='catalog' goBack={goBack} fetchedUser={fetchedUser} />
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>
