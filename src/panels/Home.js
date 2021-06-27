@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import home from '../img/home.png';
 import { Panel, PanelHeader, PanelHeaderBack, Placeholder, Button, Group, Card, Div, CardGrid } from '@vkontakte/vkui';
-
+import { Icon28ArrowLeftOutline } from '@vkontakte/icons';
 import './home.css';
 const Home = ({ id, go }) => (
 	<Panel id={id}>
-		<PanelHeader separator={false} left={<PanelHeaderBack onClick={() => { }} />}></PanelHeader>
+		<PanelHeader separator={false} left={<Icon28ArrowLeftOutline fill="#BD00FF" onClick={() => { }} />}></PanelHeader>
 
-		<img className="home-img" src={home} alt="home-img" />
+		<img className="img-home" src={home} alt="home-img" />
 
 		<Placeholder
 			header="Играй и зарабатывай"

@@ -5,6 +5,8 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
 import Catalog from './panels/catalog/Catalog';
+import ScreenBuy from './panels/ScreenBuy'
+import Development from './panels/development';
 const history = []
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -44,7 +46,9 @@ const App = () => {
 			<AppRoot>
 				<View activePanel={activePanel} popout={popout}>
 					<Home id='home' fetchedUser={fetchedUser} go={go} />
-					<Catalog id='catalog' goBack={goBack} fetchedUser={fetchedUser} />
+					<Catalog id='catalog' goBack={goBack} fetchedUser={fetchedUser} go={go} />
+					<ScreenBuy id="screen-buy" goBack={goBack} go={go} />
+					<Development id="dev" goBack={goBack} />
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>
