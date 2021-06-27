@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Panel, PanelHeader, PanelHeaderBack, Avatar, Div, Card, CardScroll, Headline, Separator, Group, SimpleCell, CellButton } from '@vkontakte/vkui';
+import { Panel, PanelHeader, PanelHeaderButton, Avatar, Div, Card, CardScroll, Headline, Separator, Group, SimpleCell, CellButton } from '@vkontakte/vkui';
 import { Icon36UserCircleOutline } from '@vkontakte/icons';
 import { Icon28ArrowDownOutline } from '@vkontakte/icons';
 import { Icon28ArrowLeftOutline } from '@vkontakte/icons';
@@ -12,6 +12,7 @@ import GroupImg from '../../img/group.png'
 import Voice from '../../img/voice.png'
 import Articl from '../../img/article.png'
 import Mouse from '../../img/mouse.png'
+import Burger from '../../img/burger.svg'
 
 import News from './news/News';
 import Lottery from './lottery/Lottery';
@@ -24,6 +25,7 @@ const Catalog = props => {
 
 				separator={false}
 				left={<Icon28ArrowLeftOutline fill="#BD00FF" className="back" onClick={props.goBack} data-to="home" />}
+				right={<PanelHeaderButton><Icon28ArrowDownOutline /></PanelHeaderButton>}
 			>
 				<Div className="header">
 					<Avatar width="48" className="header-avatar" src={props.fetchedUser.photo_200} />
