@@ -26,13 +26,13 @@ const ScreenBuy = ({ id, go, goBack, fetchedUser }) => (
 
 
 				<Div className="button-style">
-					<Button style={{ backgroundColor: '#fff', color: '#BD00FF', borderRadius: 43, padding: '12px 90px', border: '2px solid #ffffff' }} size="m">Купить</Button>
+					<Button onClick={go} data-to="products" data-page="buy" style={{ backgroundColor: '#fff', color: '#BD00FF', borderRadius: 43, padding: '12px 90px', border: '2px solid #ffffff' }} size="m">Купить</Button>
 				</Div>
 				<Div className="button-style">
-					<Button style={{ backgroundColor: 'transparent', color: '#fff', borderRadius: 43, padding: '12px 90px', border: '2px solid #ffffff' }} size="m">Продать</Button>
+					<Button onClick={go} data-to="products" data-page="sell" style={{ backgroundColor: 'transparent', color: '#fff', borderRadius: 43, padding: '12px 90px', border: '2px solid #ffffff' }} size="m">Продать</Button>
 				</Div>
 				<Div className="button-style">
-					<Button style={{ backgroundColor: '#33373C', color: '#fff', borderRadius: 43, padding: '12px 90px', border: '2px solid #33373C' }} size="m" >Обменять</Button>
+					<Button onClick={go} data-to="products" data-page="exchange" style={{ backgroundColor: '#33373C', color: '#fff', borderRadius: 43, padding: '12px 90px', border: '2px solid #33373C' }} size="m" >Обменять</Button>
 				</Div>
 			</Div>
 		</Fragment>

@@ -7,11 +7,13 @@ import Home from './panels/Home';
 import Catalog from './panels/catalog/Catalog';
 import ScreenBuy from './panels/ScreenBuy'
 import Development from './panels/development';
+import Products from './panels/catalog/products/Products';
 const history = []
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	const [productPage, setProductPage] = useState('buy');
 
 	useEffect(() => {
 		bridge.subscribe(({ detail: { type, data }}) => {
@@ -31,8 +33,9 @@ const App = () => {
 
 	const go = e => {
 		console.log(history);
-		history.push(activePanel)
+		if (history[history.length - 1] != e.currentTarget.dataset.to) history.push(activePanel)
 		setActivePanel(e.currentTarget.dataset.to);
+		if (e.currentTarget.dataset.page) setProductPage(e.currentTarget.dataset.page)
 
 	};
 
@@ -49,6 +52,7 @@ const App = () => {
 					<Catalog id='catalog' goBack={goBack} fetchedUser={fetchedUser} go={go} />
 					<ScreenBuy id="screen-buy" goBack={goBack} go={go} />
 					<Development id="dev" goBack={goBack} />
+					<Products id="products" goBack={goBack} go={go} tab={productPage} />
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>
